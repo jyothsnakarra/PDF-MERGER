@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-1^+vo)nfwl+i#$nfx2=+4hxjn2&g)(8s0um7r59r+^1h(rbddu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["merger1.herokuapp.com"]
+ALLOWED_HOSTS = ['merger1.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -118,8 +120,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-STATIC_URL = 'static/'
+
+STATIC_URL = "/static/"
+
 STATIC_ROOT= os.path.join(BASE_DIR,"staticfiles")
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static/')
