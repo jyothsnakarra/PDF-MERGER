@@ -7,13 +7,22 @@
 <title>Pdf Merger</title>
 <link rel="icon" type="image/png" sizes="343x451" href="/static/assets/img/favicon.png">
 <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <link rel="stylesheet" href="/static/assets/css/styles.min.css">
 <style>
-#merge{
-background: linear-gradient(to bottom left, #999966 0%, #cc66ff 100%);
+.thank {
+  text-align: center;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
 }
+.touch {
+  color: rgba(255,255,255,0.5);
+}
+
 .center{
 	  text-align:center;
 	  align-items:center;
@@ -22,13 +31,15 @@ background: linear-gradient(to bottom left, #999966 0%, #cc66ff 100%);
        top: 50%;
        left: 50%;
     transform: translate(-50%, -50%)
+
 	}
+	
 </style>
 </head>
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
 <div class="container">
-<a class="navbar-brand" href="#page-top">PDFMerger</a>
+<a class="navbar-brand" href="#home">PDFMerger</a>
 <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 <i class="fa fa-bars"></i>
 </button>
@@ -41,16 +52,18 @@ background: linear-gradient(to bottom left, #999966 0%, #cc66ff 100%);
 </li>
 <li class="nav-item">
 <a class="nav-link" href="#merge">Merge</a></li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li></ul></div></div></nav><header class="masthead" style="background-image: url('/static/assets/img/background.png');"><section id="home"><div class="container"><div class="intro-text"><div class="intro-lead-in"><span>Welcome To Our Site!</span></div><div class="intro-heading text-uppercase"><span><span style="color: rgb(1, 1, 1);">It's Nice To Meet You</span></span></div><a class="btn btn-primary btn-xl text-uppercase" role="button" href="#procedure">Let's get started...</a></div></div></section></header><section id="procedure" style="background: linear-gradient(#dbf7ad 0%, white);"><div class="container"><div class="row"><div class="col-lg-12 text-center"><h2 class="text-uppercase section-heading"><br><strong><span style="color: rgb(33, 33, 33);">How can I combine PDF files ?</span></strong><br><br></h2><h3 class="text-muted section-subheading">Go through the following steps to check the magic!!</h3></div></div><div class="row text-center"><div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-folder-open fa-stack-1x fa-inverse"></i></span><h4 class="section-heading" style="margin-bottom: -35px;"><br><strong><span style="color: rgb(48, 48, 48);">Choose files to Merge</span></strong><br><br></h4><p class="text-muted" style="margin-top: -25px;padding-bottom: 0px;"><br><span style="color: rgb(102, 102, 102);">Choose file: drag and drop to upload documents directly from your computer.</span><br><br></p></div><div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-upload fa-stack-1x fa-inverse"></i></span><h4 class="section-heading" style="margin-bottom: -33px;"><br><strong><span style="color: rgb(48, 48, 48);">Adjust order of files</span></strong><br><br></h4><p class="text-muted"><br><span style="color: rgb(102, 102, 102);">Our Merge PDF tool is the solution for users looking to merge multiple files into a single PDF document. Once files have been uploaded to our system, change the order of your PDF documents.</span><br><br></p></div><div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i></span><h4 class="section-heading" style="margin-top: 26px;padding-bottom: 0px;margin-bottom: 1px;">Get the merged files</h4><p class="text-muted" style="padding-top: 0px;"><br><span style="color: rgb(102, 102, 102);">Once you merge PDFs, you can download the file to your computer and view directly in your browser.</span><br><br></p></div></div></div></section>
-<section id="merge" style="background-image: url('/static/assets/img/PDFBackground.png';)"><div>
-<form method="POST" class="post-form" enctype="multipart/form-data">
+<section id="merge" style="background: url('/static/assets/img/PDFBackground.png') center / cover no-repeat;height: 450px;">
+    <form method="POST" class="post-form" enctype="multipart/form-data">
             <div class="center">
             
 			{% csrf_token %}
           {{ form }}
+		  <div id="container">
                 <button class="btn btn-lg btn-secondary fw-bold border-white bg-white">
                     Merge PDF
                 </button>
+				</div>
            </div>
         </form>
 		</div>
-</section><section id="contact" style="background-image:url('/static/assets/img/map-image.png');"><!-- Start: Contact Form Basic --><section class="position-relative py-4 py-xl-5"><div class="container position-relative"><div class="row d-flex justify-content-center"><div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4"><div class="card mb-5"><div class="card-body p-sm-5"><h2 class="text-center mb-4">Contact us</h2><form method="post"><!-- Start: Success Example --><div class="mb-3"><input class="form-control" type="text" id="name-2" name="name" placeholder="Name" required=""></div><!-- End: Success Example --><!-- Start: Error Example --><div class="mb-3"><input class="form-control" type="email" id="email-2" name="email" placeholder="Email" required=""></div><!-- End: Error Example --><div class="mb-3"><textarea class="form-control" id="message-2" name="message" rows="6" placeholder="Message"></textarea></div><div><button class="btn btn-primary d-block w-100" type="submit" data-bs-target="jyothsnakarra17@gmail.com">Send </button></div></form></div></div></div></div></div></section><!-- End: Contact Form Basic --></section><footer><div class="container"><div class="row"><div class="col-md-4"><span class="copyright"><span style="color: rgb(249, 19, 5);">Thank</span></span><span class="copyright"><span style="color: rgb(10, 19, 242);">&nbsp;You!!</span></span></div><div class="col"><ul class="list-inline social-buttons"><li class="list-inline-item"><a href="https://github.com/jyothsnakarra"><i class="fa fa-github"></i></a></li><li class="list-inline-item"><a href="https://www.linkedin.com/in/jyothsna-karra-81bb85219/"><i class="fa fa-linkedin"></i></a></li></ul></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script><script src="/assets/js/script.min.js?h=8f7dd7ff40a7d537cd9553226de7f2a1"></script></body></html>
+</section><section id="contact" style="background-image: url('/static/assets/img/map-image.png');"><footer><div class="container"><span class="fs-1 touch thank">Contact Us</span></div><div class="container"><div class="col thank"><ul class="list-inline social-buttons"><li class="list-inline-item"></li><li class="list-inline-item"><a href="https://github.com/jyothsnakarra"><i class="fa fa-github" style="font-size: 44px;"></i></a></li><li class="list-inline-item"><a href="https://www.linkedin.com/in/jyothsna-karra-81bb85219/"><i class="fa fa-linkedin" style="font-size: 44px;color: rgb(255, 255, 255);"></i></a></li></ul></div></div></div></footer></section><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script><script src="/assets/js/script.min.js?h=ecc440ce2b35a6ed59fbd6e54cc9f308"></script></body></html>
